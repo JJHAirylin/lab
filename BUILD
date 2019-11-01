@@ -807,6 +807,7 @@ cc_library(
         "-lrt",
     ],
     deps = IOQ3_COMMON_DEPS,
+    alwayslink = 1,
 )
 
 cc_library(
@@ -826,6 +827,7 @@ cc_library(
     defines = IOQ3_COMMON_DEFINES,
     linkopts = ["-lOSMesa"],
     deps = IOQ3_COMMON_DEPS,
+    alwayslink = 1,
 )
 
 cc_library(
@@ -848,6 +850,7 @@ cc_library(
         "-lX11",
     ],
     deps = IOQ3_COMMON_DEPS,
+    alwayslink = 1,
 )
 
 cc_library(
@@ -870,6 +873,7 @@ cc_library(
         "-lGL",
     ],
     deps = IOQ3_COMMON_DEPS + ["//third_party/GL/util:egl_util"],
+    alwayslink = 1,
 )
 
 cc_binary(
@@ -935,7 +939,9 @@ cc_library(
         ":level_cache_types",
         "//third_party/rl_api:env_c_api",
         "@com_google_absl//absl/container:flat_hash_map",
+        "@com_google_absl//absl/strings",
     ],
+    alwayslink = 1,
 )
 
 cc_library(
